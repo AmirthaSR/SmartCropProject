@@ -1,8 +1,12 @@
 const express = require('express');
+const authRoutes = require("./routes/auth.js");
+
 const app = express();
 const port = 3000;
 
-// This route sends "Hello World" when you open http://localhost:3000
+app.use(express.json());
+app.use("/api", authRoutes);
+
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
@@ -10,4 +14,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
-
