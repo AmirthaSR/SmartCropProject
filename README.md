@@ -89,3 +89,64 @@ python inference.py
 
 ### Environment Variables
 Create a `.env` file:
+DB_HOST=localhost
+
+DB_USER=root
+
+DB_PASS=yourpassword
+
+DB_NAME=smartcrop
+
+WEATHER_API_KEY=your_openweather_key
+
+PORT=3000
+
+### Run
+```bash
+npm start
+```
+
+---
+
+## 🐛 Known Issues Fixed
+
+- `soilType` from ResNet18 was not being passed into SQL query — fixed with `mapSoilType()` 
+  and `AND soil_type = ?` added to recommendation query
+- Training augmentations removed from inference pipeline; ImageNet normalization added
+- Inference transform corrected to match ResNet18 expected input format
+
+---
+
+## 🌍 SDG Alignment
+
+| SDG | Goal                          |
+|-----|-------------------------------|
+| SDG 1  | No Poverty — better yields = better income  |
+| SDG 2  | Zero Hunger — precision farming support     |
+| SDG 13 | Climate Action — weather-aware decisions    |
+
+---
+
+## 🆚 Competitive Landscape
+
+| Platform   | Smart Crop Advantage                        |
+|------------|---------------------------------------------|
+| Fasal      | No soil image input; sensor-based only      |
+| AgroStar   | Advisory only, no ML soil classification    |
+| Plantix    | Disease detection only, no crop planning    |
+
+---
+
+## 👩‍💻 Author
+
+**Amirtha S R**  
+B.E. Computer Science & Engineering  
+Rajalakshmi Engineering College, Chennai  
+GitHub: [AmirthaSr](https://github.com/AmirthaSr)  
+LinkedIn: [amirtha-s-r-68321a318](https://linkedin.com/in/amirtha-s-r-68321a318)
+
+---
+
+## 📄 License
+
+MIT License
